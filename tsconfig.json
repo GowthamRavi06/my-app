@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/components/nav.jsx", "src/components/projects.jsx", "src/components/hero.jsx", "src/components/scrll.jsx", "src/components/techcard.jsx"  ],
   "exclude": ["node_modules"]
 }

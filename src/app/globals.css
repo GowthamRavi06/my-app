@@ -29,13 +29,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html,
-body {
-  overflow-y: scroll !important;
-  scrollbar-width: none !important; /* Firefox */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none !important; /* Chrome, Safari */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
