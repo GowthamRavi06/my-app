@@ -12,11 +12,11 @@ export default function Hero() {
   };
 
   return (
-    <section className="px-20 py-10 max-w-[1560px] mx-auto">
-      <div className="mt-16 flex gap-5">
+    <section className="px-6 md:px-12 lg:px-20 py-10 max-w-[1560px] mx-auto">
+      <div className="mt-16 flex gap-5 font-mono">
         <div className="rounded-full overflow-hidden h-16 w-16 relative">
           <Image
-            src="/profile-image.jpeg"
+            src="/profile-image.webp"
             className="absolute object-cover "
             alt="profile-picture"
             fill
@@ -28,7 +28,7 @@ export default function Hero() {
           animateBy="words"
           direction="bottom"
           onAnimationComplete={handleAnimationComplete}
-          className=" w-[270px] mb-8"
+          className=" w-[370px] mb-8"
         />
       </div>
 
@@ -56,16 +56,16 @@ export default function Hero() {
       </div> */}
       <div className="relative h-[250px] mt-5 w-full">
         <Image
-          src="/hero-image.png"
+          src="/hero-image.webp"
           className="absolute object-cover "
           alt="profile-picture"
           fill
         />
       </div>
-      <h1 className="text-[100px]/[90px] font-semibold mt-5">
+      <h1 className="text-[60px]/[60px] sm:text-[70px]/[70px] md:text-[80px]/[80px] lg:text-[100px]/[100px]  font-inter font-semibold mt-5">
         Senior Full <br /> Stack Developer
       </h1>
-      <div className="flex gap-5 text-[#ffffff80]  mt-14 items-center">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-5 font-mono text-[#ffffff80]  mt-14 items-center">
         <p className="whitespace-nowrap "> Bangalore, India</p>
         <div className="h-px mx-5  w-full bg-[#ffffff1a]"></div>
         <p className="">gowthamravi06@gmail.com</p>

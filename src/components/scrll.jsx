@@ -4,49 +4,59 @@ import { motion } from "motion/react";
 
 export const skillsData = [
   {
-    id: "product-design",
-    title: "Product Design",
+    id: "Hyring",
+    title: "Hyring",
     description:
-      "Skilled in 0–1 product design, from user research, UX flows, high-fidelity UI to design systems.",
-    tools: ["Figma", "Notion"],
+      "An all-in-one AI hiring platform built to automate interviews, streamline evaluations, and scale recruitment effortlessly.",
+    tools: ["Next.js", "Nest JS", "PostgreSQL", "TypeScript"],
     bg: "rgb(23, 23, 23)",
+    order: "01",
   },
   {
-    id: "ux-research",
+    id: "Ryzone",
     order: "02",
-    title: "UX Research & Strategy",
+    title: "Ryzone",
     description:
-      "User interviews, research, and journey mapping to guide every design decision.",
-    tools: ["ChatGPT", "Notion"],
+      "A full-stack e-commerce solution built to deliver fast, reliable shopping experiences across web and mobile platforms.",
+    tools: ["React.js", "Next.js", "React Native", "Redux"],
     bg: "rgb(28, 28, 28)",
   },
   {
-    id: "interaction-design",
-    order: "03",
-    title: "Interaction Design",
+    id: "Hyring-blogs",
+    title: "Hyring-blogs",
     description:
-      "Micro-interactions, motion, and prototypes that make products feel alive.",
-    tools: ["Framer", "Figma"],
+      "A scalable, SEO-optimized blog platform built for performance, rich media handling, and seamless content management.",
+    tools: ["Astro", "React", "Sanity"],
     bg: "rgb(35, 35, 35)",
+    order: "03",
   },
   {
-    id: "gen-ai",
+    id: "Domaincer",
     order: "04",
-    title: "Gen AI",
+    title: "Domaincer®",
     description:
-      "Using AI for concepting, visual/creative direction, and rapid iteration to push ideas faster.",
-    tools: ["Midjourney", "VEO 3"],
+      "A performance-optimized static website focused on clean UI, responsive design, and cross-browser compatibility with SEO best practices.",
+    tools: ["Astro", "React"],
     bg: "rgb(40, 40, 40)",
   },
-  {
-    id: "branding",
-    order: "05",
-    title: "Branding",
-    description:
-      "Shaping brand narratives, visual language, and cross-platform consistency so the product feels like a solid experience.",
-    tools: ["Figma", "Photoshop"],
-    bg: "rgb(46, 46, 46)",
-  },
+  // {
+  //   id: "gen-ai",
+  //   order: "04",
+  //   title: "Gen AI",
+  //   description:
+  //     "Using AI for concepting, visual/creative direction, and rapid iteration to push ideas faster.",
+  //   tools: ["Midjourney", "VEO 3"],
+  //   bg: "rgb(40, 40, 40)",
+  // },
+  // {
+  //   id: "branding",
+  //   order: "05",
+  //   title: "Branding",
+  //   description:
+  //     "Shaping brand narratives, visual language, and cross-platform consistency so the product feels like a solid experience.",
+  //   tools: ["Figma", "Photoshop"],
+  //   bg: "rgb(46, 46, 46)",
+  // },
 ];
 
 const HorizontalScrollSection = ({ scrollContainer }) => {
@@ -94,26 +104,26 @@ const HorizontalScrollSection = ({ scrollContainer }) => {
   }, [scrollContainer]);
 
   return (
-    <div ref={sectionRef} className="relative h-[400vh]">
+    <div id="projects" ref={sectionRef} className="relative h-[400vh]">
       <div className="sticky top-0 h-screen overflow-hidden  flex flex-col justify-center">
-        <div className="flex items-center gap-10 px-20 ">
-          <h2 className="text-[58px] font-semibold whitespace-nowrap">
-            Skills and Tools
+        <div className="flex items-center gap-10 px-6 md:px-12 lg:px-20 ">
+          <h2 className="mb-3 sm:mt-0 text-[40px] sm:text-[58px] font-semibold whitespace-nowrap">
+            Projects
           </h2>
           <div className="h-px  mx-4   w-full bg-[#ffffff1a]"></div>
         </div>
         <div
           ref={trackRef}
-          className="flex   w-max px-20  items-center   will-change-transform"
+          className="flex   w-max px-10 sm:px-20  items-center   will-change-transform"
         >
           {skillsData.map((skill) => (
             <div
               key={skill.id}
               style={{ background: skill?.bg }}
-              className="space-y-3 relative h-[440px] w-[540px] p-12"
+              className="space-y-3 relative h-[400px] w-[360px] sm:h-[440px] sm:w-[540px] p-6 sm:p-12"
             >
-              <div className="flex  items-start justify-between">
-                <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row  items-start justify-between">
+                <div className="flex gap-3 flex-wrap order-2 sm:order-1">
                   {skill.tools.map((tool) => (
                     <span
                       key={tool}
@@ -123,18 +133,27 @@ const HorizontalScrollSection = ({ scrollContainer }) => {
                     </span>
                   ))}
                 </div>
-                <div className=" opacity-50 text-[100px]">{skill.order}</div>
+                <div className="font-space order-1 sm:order-2 sm:-mt-10 opacity-50 text-[60px] sm:text-[100px]">
+                  {skill.order}
+                </div>
               </div>
 
               <div className="absolute bottom-12">
-                <h3 className="text-[28px] font-bold">{skill.title}</h3>
-                <p className="text-slate-400 text-[16px] max-w-[350px]">
+                <h3 className="text-[24px] sm:text-[28px] font-bold">
+                  {skill.title}
+                </h3>
+                <p className="text-slate-400 text-[15px] sm:text-[16px] max-w-[320px] sm:max-w-[400px]">
                   {skill.description}
                 </p>
               </div>
             </div>
           ))}
           <div className="grid  grid-cols-12 gap-2 pl-2 ">
+            {Array.from({ length: 480 }).map((_, i) => (
+              <span key={i} className="h-0.5 w-0.5 rounded-full bg-slate-400" />
+            ))}
+          </div>
+          <div className=" hidden sm:grid  grid-cols-12 gap-2 pl-2 ">
             {Array.from({ length: 528 }).map((_, i) => (
               <span key={i} className="h-0.5 w-0.5 rounded-full bg-slate-400" />
             ))}

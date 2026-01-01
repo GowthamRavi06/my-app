@@ -8,13 +8,18 @@ import TechCard from "../components/techcard";
 import GradualBlurMemo from "../ui/gradual-blur";
 import { useRef } from "react";
 import { useScroll, useSpring } from "motion/react";
+import Footer from "../components/footer";
+import SplashCursor from "../ui/splach";
+import About from "../components/about";
+import ScrollReveal from "../ui/scroll-reveal";
+import AnimatedContent from "../ui/animate-content";
+import CircularGallery from "../ui/circular-gallery";
 
 export default function page() {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     container: scrollRef,
   });
-
   return (
     <div className="">
       <Nav scrollYProgress={scrollYProgress} />
@@ -46,37 +51,19 @@ export default function page() {
             opacity={1}
           />
           <Hero />
+          <About />
+
           <ProjectCard />
           <HorizontalScrollSection scrollContainer={scrollRef} />
-          <section className="px-20">
-            <p className=" text-[110px] font-bold mb-32">
-              <span className="text-[#ffffff80]">Let's</span> Connect
-            </p>
-            <p className="text-[34px] text-[#ffffff80] mb-10">
-              Let's build something cool together!
-            </p>
-            <div className="grid grid-cols-3 w-full mt-3 mb-20">
-              <div
-                style={{ background: "rgb(31, 31, 31)" }}
-                className="h-[108px] text-2xl flex justify-center items-center "
-              >
-                Connect on LinkedIn
-              </div>
-
-              <div
-                style={{ background: "rgb(46, 46, 46)" }}
-                className="h-[108px] text-2xl flex justify-center items-center "
-              >
-                Send an Email
-              </div>
-              <div
-                style={{ background: "rgb(84, 84, 84)" }}
-                className="h-[108px] text-2xl flex justify-center items-center"
-              >
-                Whats app me
-              </div>
-            </div>
-          </section>
+          <Footer />
+          {/* <div style={{ height: "600px", position: "relative" }}>
+            <CircularGallery
+              bend={3}
+              textColor="#ffffff"
+              borderRadius={0.05}
+              scrollEase={0.02}
+            />
+          </div> */}
         </div>
       </section>
     </div>
