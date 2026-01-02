@@ -15,7 +15,7 @@ export default function page() {
     container: scrollRef,
   });
   return (
-    <div className="bg-[#171717] ">
+    <div className=" ">
       <Nav scrollYProgress={scrollYProgress} />
 
       <section
