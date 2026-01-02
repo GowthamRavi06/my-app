@@ -148,7 +148,7 @@ const HorizontalScrollSection = ({ scrollContainer }) => {
               </div>
             </div>
           ))}
-          <div className="grid  grid-cols-12 gap-2 pl-2 ">
+          <div className="grid sm:hidden grid-cols-12 gap-2 pl-2 ">
             {Array.from({ length: 480 }).map((_, i) => (
               <span key={i} className="h-0.5 w-0.5 rounded-full bg-slate-400" />
             ))}

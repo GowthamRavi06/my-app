@@ -1,19 +1,13 @@
 "use client";
+import { useScroll } from "motion/react";
+import { useRef } from "react";
+import About from "../components/about";
+import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Nav from "../components/nav";
 import ProjectCard from "../components/projects";
-import HorizontalScroll from "../components/skills";
 import HorizontalScrollSection from "../components/scrll";
-import TechCard from "../components/techcard";
 import GradualBlurMemo from "../ui/gradual-blur";
-import { useRef } from "react";
-import { useScroll, useSpring } from "motion/react";
-import Footer from "../components/footer";
-import SplashCursor from "../ui/splach";
-import About from "../components/about";
-import ScrollReveal from "../ui/scroll-reveal";
-import AnimatedContent from "../ui/animate-content";
-import CircularGallery from "../ui/circular-gallery";
 
 export default function page() {
   const scrollRef = useRef(null);
@@ -21,7 +15,7 @@ export default function page() {
     container: scrollRef,
   });
   return (
-    <div className="">
+    <div className="bg-[#171717] ">
       <Nav scrollYProgress={scrollYProgress} />
 
       <section
